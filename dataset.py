@@ -99,7 +99,7 @@ if __name__ == '__main__':
   train_images, train_labels = imbalance_sample(train_set, train_labels, irs)
   test_irs = [100] * len(irs)
   test_images, test_labels = imbalance_sample(test_set, test_labels, test_irs)
-  np.savez('../dataset/mnist_dataset1', train_images=train_images, train_labels=train_labels,
+  np.savez('./dataset/mnist_dataset1', train_images=train_images, train_labels=train_labels,
           test_images=test_images, test_labels=test_labels)
 
 

@@ -298,6 +298,7 @@ if __name__ == '__main__':
     num_examples_to_generate = 16
     epochs = 200
     batch_size = 32
+
     sim_clr = F_VAE(model='cnn')
     classifier = Classifier(shape=[28, 28, 1], model='cnn')
 

@@ -24,6 +24,7 @@ if __name__ == '__main__':
     n = 5
     sample_size = 21
     batch_size = 32
+    # threshold setup for estimation function;
     threshold = [0.998, 0.997, 0.966, 0.957, 0.967, 0.95, 0.951, 0.95, 0.95 , 0.95]
     #threshold = [0.96, 0.927, 0.899, 0.739, 0.744]
     threshold_list = [threshold]
@@ -39,6 +40,7 @@ if __name__ == '__main__':
         classifier = Classifier(shape=dataset.shape, model='mlp', num_cls=dataset.num_cls)
 
         checkpoint = tf.train.Checkpoint(sim_clr=model, clssifier=classifier)
+        # checkpoint directory restored pre-train model
         checkpoint.restore("./checkpoints/8_18/pre_train_mnist_super_loss/ckpt-84")
 
         start_train(epochs, n, threshold_list, method, model, classifier, dataset,
