@@ -5,7 +5,7 @@ import time
 import numpy as np
 import os
 import pandas as pd
-from loss import classifier_loss, confidence_function, top_loss, acc_metrix, indices, super_loss, compute_loss
+from loss import classifier_loss, confidence_function, indices, super_loss, compute_loss
 import copy
 
 

@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
         checkpoint = tf.train.Checkpoint(sim_clr=model, clssifier=classifier)
         # checkpoint directory restored pre-train model
-        checkpoint.restore("./checkpoints/8_18/pre_train_mnist_super_loss/ckpt-84")
+        checkpoint.restore("./checkpoints/8_18/pre_train_mnist_super_loss/ckpt-1")
 
         start_train(epochs, n, threshold_list, method, model, classifier, dataset,
                     [train_set, train_labels],
