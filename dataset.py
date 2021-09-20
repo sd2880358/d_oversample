@@ -51,10 +51,12 @@ class Dataset():
     self.batch_size = batch_size
     self.dataset = dataset
     self.switcher = {
-      'mnist': np.load('./dataset/mnist_dataset1.npz'),
-      'celebA': np.load('./dataset/celebA_dataset.npz'),
-      'large_celebA': np.load('./dataset/celebA_large_dataset.npz'),
+      'mnist': np.load('./dataset/mnist_dataset1.npz')
+
+      #'celebA': np.load('./dataset/celebA_dataset.npz'),
+      #'large_celebA': np.load('./dataset/celebA_large_dataset.npz'),
       #'fashion_mnist': np.load('../dataset/fashion_mnist.npz')
+
     }
 
     if (dataset == 'mnist'):
