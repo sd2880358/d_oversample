@@ -5,6 +5,7 @@ from model import Classifier, F_VAE
 import os
 
 if __name__ == '__main__':
+    ''' gpu setup
     os.environ["CUDA_DECICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = "1,4,5,7"
 
@@ -19,7 +20,7 @@ if __name__ == '__main__':
         except RuntimeError as e:
             # Virtual devices must be set before GPUs have been initialized
             print(e)
-
+    '''
     n = 5
     sample_size = 21
     batch_size = 32

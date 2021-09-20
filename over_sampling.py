@@ -1,14 +1,9 @@
 import tensorflow as tf
-from model import CVAE, Classifier, F_VAE
-from dataset import preprocess_images, divide_dataset, imbalance_sample
-from tensorflow_addons.image import rotate
+from model import Classifier, F_VAE
+from dataset import preprocess_images, imbalance_sample
 import time
-from tensorflow.linalg import matvec
-import matplotlib.pyplot as plt
 import numpy as np
 import os
-from IPython import display
-import math
 import pandas as pd
 from loss import classifier_loss, confidence_function, top_loss, acc_metrix, indices, super_loss, compute_loss
 import copy
@@ -196,7 +191,7 @@ def start_train(epochs, n, threshold_list, method, model, classifier, dataset,
             metrix_list = train_step(model, classifier, classifier_list,
             x, y, oversample=True, metrix_list=metrix_list)
 
-        '''
+        ''' diff generate method
         elif (model.data == 'mnist'):
             for x,z,y in tf.data.Dataset.zip((train_set[0], latent, train_set[1])):
                 metrix_list = train_step(model, classifier, classifier_list,

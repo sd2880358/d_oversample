@@ -1,20 +1,10 @@
+from dataset import Dataset
 import tensorflow as tf
-from over_sampling import start_train
-from dataset import preprocess_images, divide_dataset, imbalance_sample, Dataset
-from model import CVAE, Classifier, F_VAE
-from celebA import CelebA
-from load_data import split
-import tensorflow as tf
-from model import CVAE, Classifier, F_VAE
-from dataset import preprocess_images, divide_dataset, imbalance_sample
-from tensorflow_addons.image import rotate
+from model import Classifier, F_VAE
 import time
-from tensorflow.linalg import matvec
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 from IPython import display
-import math
 import pandas as pd
 from loss import compute_loss, confidence_function, top_loss, acc_metrix, indices
 
@@ -131,6 +121,7 @@ def start_train(epochs, c_epochs, model, classifier, method,
 
 
 if __name__ == '__main__':
+    ''' gpu setup
     os.environ["CUDA_DECICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = "1,4,5,7"
     gpus = tf.config.list_physical_devices('GPU')
@@ -145,7 +136,7 @@ if __name__ == '__main__':
         except RuntimeError as e:
             # Virtual devices must be set before GPUs have been initialized
             print(e)
-
+    '''
     target = 'margin'
     threshold = 0.95
     date = '8_18'
